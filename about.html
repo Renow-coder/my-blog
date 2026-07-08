@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 - ZMF · 思绪与光影</title>
+  <meta name="description" content="关于 zmf - 开发者、写作者、终身学习者">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%238B7355'/><text x='50' y='68' font-size='48' font-weight='bold' fill='white' text-anchor='middle' font-family='serif'>Z</text></svg>">
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">Z</span>
+        <span class="logo-text">zmf</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">🏠 首页</a></li>
+        <li><a href="index.html#articles" class="nav-link">📝 文章</a></li>
+        <li><a href="tags.html" class="nav-link">🏷 标签</a></li>
+        <li><a href="about.html" class="nav-link">👤 关于</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" title="切换主题">☾</button>
+        <button class="menu-toggle" title="菜单">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <section class="about-section">
+      <!-- Hero -->
+      <div class="about-hero">
+        <div class="about-avatar">Z</div>
+        <h1 class="about-name">zmf</h1>
+        <p class="about-tagline">开发者 · 写作者 · 终身学习者</p>
+        <div class="about-social">
+          <button class="social-link" data-type="email" onclick="SocialLinks.openEmail()" title="邮箱">✉</button>
+          <button class="social-link" data-type="wechat" onclick="SocialLinks.openQR('wechat')" title="微信">💬</button>
+          <button class="social-link" data-type="qq" onclick="SocialLinks.openQQ()" title="QQ">🐧</button>
+          <button class="social-link" data-type="feishu" onclick="SocialLinks.openFeishu()" title="飞书">🐦</button>
+        </div>
+      </div>
+
+      <!-- About Content -->
+      <div class="about-content">
+        <h2>👋 你好，我是 zmf</h2>
+        <p>
+          一个热爱技术和写作的人。白天写代码，晚上写文章，周末读书和探索新事物。
+          我相信技术可以让生活更美好，也相信文字可以触达人心。
+        </p>
+        <p>
+          这个博客是我的小小角落，用来记录技术探索、设计思考、读书感悟和生活中的点滴。
+          如果你也对这些话题感兴趣，欢迎和我交流——我们可以通过邮箱、微信、QQ 或飞书联系。
+        </p>
+
+        <h2>🛠 技能栈</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <span class="skill-icon">⚡</span>
+            <div>
+              <div class="skill-name">前端开发</div>
+              <div class="skill-desc">HTML / CSS / JavaScript</div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">🎨</span>
+            <div>
+              <div class="skill-name">UI/UX 设计</div>
+              <div class="skill-desc">Figma / Sketch / 原型设计</div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">🔧</span>
+            <div>
+              <div class="skill-name">后端开发</div>
+              <div class="skill-desc">Node.js / Python / 数据库</div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">📱</span>
+            <div>
+              <div class="skill-name">移动开发</div>
+              <div class="skill-desc">React Native / 小程序</div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">☁</span>
+            <div>
+              <div class="skill-name">云与部署</div>
+              <div class="skill-desc">Docker / CI/CD / 云服务</div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">✍</span>
+            <div>
+              <div class="skill-name">技术写作</div>
+              <div class="skill-desc">文档 / 博客 / 技术分享</div>
+            </div>
+          </div>
+        </div>
+
+        <h2>📚 关于这个博客</h2>
+        <p>
+          这个博客采用纯前端方案构建，没有使用任何框架。HTML + CSS + JavaScript，
+          加上 marked.js 做 Markdown 渲染。每一行代码都清晰可控，每一个细节都经过打磨。
+        </p>
+        <p>
+          你在这里看到的所有功能——暗黑模式、文章搜索、标签分类、点赞收藏、留言互动、
+          社交分享——都是用原生 JavaScript 实现的。如果你对实现细节感兴趣，
+          可以阅读<a href="article.html?id=building-this-blog">这篇文章</a>。
+        </p>
+
+        <h2>🌟 我相信的</h2>
+        <p>
+          <strong>简单即是美。</strong> 好的设计不需要过度装饰，好的代码不需要过度抽象。
+          在复杂和简单之间，我永远选择简单。
+        </p>
+        <p>
+          <strong>持续学习。</strong> 技术在变，但学习的能力不会变。保持好奇心，
+          保持空杯心态，每天进步一点点。
+        </p>
+        <p>
+          <strong>分享即成长。</strong> 把学到的东西写下来、讲出来，不仅帮到别人，
+          也加深了自己的理解。这个博客就是我的分享方式。
+        </p>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+          <h2 class="contact-title">💌 与我联系</h2>
+          <p class="contact-desc">
+            无论是技术交流、合作机会，还是只是想聊聊天，
+            都欢迎通过以下方式找到我：
+          </p>
+          <div class="contact-methods" id="contact-methods">
+            <!-- Contact methods rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Message Board -->
+        <div style="margin-top: 48px;">
+          <h2 class="comments-title">📝 留言板</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 15px;">
+            在这里留下你想对我说的话，或和其他访客互动交流。
+          </p>
+
+          <div class="comment-form">
+            <textarea
+              class="comment-input"
+              id="message-text"
+              placeholder="写下你想说的话...（留言将保存在本地浏览器中）"
+            ></textarea>
+            <div class="comment-form-bottom">
+              <input
+                type="text"
+                class="comment-name-input"
+                id="message-name"
+                placeholder="你的昵称（选填）"
+              >
+              <button class="btn btn-primary" onclick="MessageBoard.submit()">发表留言</button>
+            </div>
+          </div>
+
+          <div class="comment-list" id="message-list">
+            <!-- Messages rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">Z</span>
+          <span class="logo-text">zmf</span>
+        </div>
+        <p class="footer-desc">
+          在代码与文字之间，寻找生活的诗意。<br>
+          记录技术探索、设计思考与生活感悟。
+        </p>
+        <div class="footer-social">
+          <button class="social-link" data-type="email" onclick="SocialLinks.openEmail()" title="邮箱">✉</button>
+          <button class="social-link" data-type="wechat" onclick="SocialLinks.openQR('wechat')" title="微信">💬</button>
+          <button class="social-link" data-type="qq" onclick="SocialLinks.openQQ()" title="QQ">🐧</button>
+          <button class="social-link" data-type="feishu" onclick="SocialLinks.openFeishu()" title="飞书">🐦</button>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>导航</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="index.html#articles">文章列表</a></li>
+          <li><a href="tags.html">标签分类</a></li>
+          <li><a href="about.html">关于我</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>分类</h4>
+        <ul>
+          <li><a href="tags.html?tag=技术">技术笔记</a></li>
+          <li><a href="tags.html?tag=设计">设计思考</a></li>
+          <li><a href="tags.html?tag=读书">读书笔记</a></li>
+          <li><a href="tags.html?tag=随笔">生活随笔</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>联系</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openEmail()">✉ 邮箱</a></li>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openQR('wechat')">💬 微信</a></li>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openQQ()">🐧 QQ</a></li>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openFeishu()">🐦 飞书</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 ZMF · 思绪与光影 · 用心记录每一刻</span>
+      <span>Made with ❤ & code</span>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" title="回到顶部">↑</button>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/articles.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/article.js"></script>
+</body>
+</html>

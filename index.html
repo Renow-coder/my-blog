@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZMF · 思绪与光影</title>
+  <meta name="description" content="zmf的个人博客 - 在代码与文字之间，寻找生活的诗意">
+  <meta name="author" content="zmf">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%238B7355'/><text x='50' y='68' font-size='48' font-weight='bold' fill='white' text-anchor='middle' font-family='serif'>Z</text></svg>">
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">Z</span>
+        <span class="logo-text">zmf</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">🏠 首页</a></li>
+        <li><a href="index.html#articles" class="nav-link">📝 文章</a></li>
+        <li><a href="tags.html" class="nav-link">🏷 标签</a></li>
+        <li><a href="about.html" class="nav-link">👤 关于</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" title="切换主题">☾</button>
+        <button class="menu-toggle" title="菜单">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <span class="hero-greeting">✦ WELCOME</span>
+      <h1 class="hero-title">
+        在代码与文字之间<br>
+        寻找<span class="accent">生活的诗意</span>
+      </h1>
+      <p class="hero-subtitle" id="hero-subtitle">
+        这里是 zmf 的个人博客，记录技术探索、设计思考与生活感悟。
+        每一篇文章，都是一次与自己的对话。
+      </p>
+      <div class="hero-actions">
+        <a href="#articles" class="btn btn-primary">📖 开始阅读</a>
+        <a href="about.html" class="btn btn-outline">了解更多 →</a>
+      </div>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-wrap" style="padding: 0 32px;">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        class="search-input"
+        id="search-input"
+        placeholder="搜索文章标题、摘要或标签..."
+      >
+    </div>
+
+    <!-- Articles + Sidebar Layout -->
+    <div class="layout" id="articles">
+      <!-- Article List -->
+      <div>
+        <div class="section-header">
+          <h2 class="section-title">最新文章</h2>
+          <a href="tags.html" class="section-more">按标签浏览 →</a>
+        </div>
+        <div class="article-grid" id="article-grid">
+          <!-- Articles rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div id="sidebar-author"></div>
+        <div id="sidebar-tags"></div>
+        <div id="sidebar-popular"></div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">Z</span>
+          <span class="logo-text">zmf</span>
+        </div>
+        <p class="footer-desc">
+          在代码与文字之间，寻找生活的诗意。<br>
+          记录技术探索、设计思考与生活感悟。
+        </p>
+        <div class="footer-social">
+          <button class="social-link" data-type="email" onclick="SocialLinks.openEmail()" title="邮箱">✉</button>
+          <button class="social-link" data-type="wechat" onclick="SocialLinks.openQR('wechat')" title="微信">💬</button>
+          <button class="social-link" data-type="qq" onclick="SocialLinks.openQQ()" title="QQ">🐧</button>
+          <button class="social-link" data-type="feishu" onclick="SocialLinks.openFeishu()" title="飞书">🐦</button>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>导航</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="index.html#articles">文章列表</a></li>
+          <li><a href="tags.html">标签分类</a></li>
+          <li><a href="about.html">关于我</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>分类</h4>
+        <ul>
+          <li><a href="tags.html?tag=技术">技术笔记</a></li>
+          <li><a href="tags.html?tag=设计">设计思考</a></li>
+          <li><a href="tags.html?tag=读书">读书笔记</a></li>
+          <li><a href="tags.html?tag=随笔">生活随笔</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>联系</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openEmail()">✉ 邮箱</a></li>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openQR('wechat')">💬 微信</a></li>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openQQ()">🐧 QQ</a></li>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openFeishu()">🐦 飞书</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 ZMF · 思绪与光影 · 用心记录每一刻</span>
+      <span>Made with ❤ & code</span>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" title="回到顶部">↑</button>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/articles.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Render articles on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Render article grid
+      ArticleRenderer.renderGrid(ARTICLES, 'article-grid');
+
+      // Render sidebar
+      Sidebar.renderAuthor('sidebar-author');
+      Sidebar.renderTags('sidebar-tags');
+      Sidebar.renderPopular('sidebar-popular');
+
+      // Init search
+      Search.init();
+
+      // Typewriter effect on subtitle (optional)
+      const subtitle = document.getElementById('hero-subtitle');
+      if (subtitle) {
+        const originalText = subtitle.textContent;
+        // Only apply on larger screens
+        if (window.innerWidth > 768) {
+          typewriter(subtitle, originalText, 30);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

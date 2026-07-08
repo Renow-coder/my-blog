@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章 - ZMF · 思绪与光影</title>
+  <meta name="description" content="zmf的个人博客文章">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Code Highlight Theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css" id="hljs-light">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css" id="hljs-dark" disabled>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%238B7355'/><text x='50' y='68' font-size='48' font-weight='bold' fill='white' text-anchor='middle' font-family='serif'>Z</text></svg>">
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">Z</span>
+        <span class="logo-text">zmf</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">🏠 首页</a></li>
+        <li><a href="index.html#articles" class="nav-link">📝 文章</a></li>
+        <li><a href="tags.html" class="nav-link">🏷 标签</a></li>
+        <li><a href="about.html" class="nav-link">👤 关于</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" title="切换主题">☾</button>
+        <button class="menu-toggle" title="菜单">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Article Header -->
+    <div class="article-header">
+      <div class="article-tags-row" id="article-tags"></div>
+      <h1 class="article-title" id="article-title"></h1>
+      <div class="article-meta">
+        <span class="article-meta-item">📅 <span id="article-date"></span></span>
+        <span class="article-meta-item">⏱ <span id="article-readtime"></span></span>
+        <span class="article-meta-item">👁 <span id="article-views"></span></span>
+      </div>
+      <div class="article-divider"></div>
+    </div>
+
+    <!-- Article Content (Markdown rendered here) -->
+    <div class="article-content" id="article-content">
+      <!-- Loading skeleton -->
+      <div class="skeleton" style="height: 24px; margin-bottom: 16px;"></div>
+      <div class="skeleton" style="height: 24px; margin-bottom: 16px; width: 90%;"></div>
+      <div class="skeleton" style="height: 24px; margin-bottom: 16px; width: 85%;"></div>
+      <div class="skeleton" style="height: 100px; margin-bottom: 16px;"></div>
+      <div class="skeleton" style="height: 24px; margin-bottom: 16px; width: 95%;"></div>
+    </div>
+
+    <!-- Article Footer: Reactions & Share -->
+    <div class="article-footer">
+      <!-- Reactions -->
+      <div class="reactions" id="reactions"></div>
+
+      <!-- Share -->
+      <div class="share-section" id="share-section"></div>
+
+      <!-- Prev/Next Navigation -->
+      <div class="post-nav" id="post-nav"></div>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="comments-section">
+      <h2 class="comments-title">💬 留言互动</h2>
+
+      <div class="comment-form">
+        <textarea
+          class="comment-input"
+          id="comment-text"
+          placeholder="写下你的想法...（支持与作者互动交流）"
+        ></textarea>
+        <div class="comment-form-bottom">
+          <input
+            type="text"
+            class="comment-name-input"
+            id="comment-name"
+            placeholder="你的昵称（选填）"
+          >
+          <button class="btn btn-primary" onclick="ArticlePage.submitComment()">发表评论</button>
+        </div>
+      </div>
+
+      <div class="comment-list" id="comment-list">
+        <!-- Comments rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">Z</span>
+          <span class="logo-text">zmf</span>
+        </div>
+        <p class="footer-desc">
+          在代码与文字之间，寻找生活的诗意。<br>
+          记录技术探索、设计思考与生活感悟。
+        </p>
+        <div class="footer-social">
+          <button class="social-link" data-type="email" onclick="SocialLinks.openEmail()" title="邮箱">✉</button>
+          <button class="social-link" data-type="wechat" onclick="SocialLinks.openQR('wechat')" title="微信">💬</button>
+          <button class="social-link" data-type="qq" onclick="SocialLinks.openQQ()" title="QQ">🐧</button>
+          <button class="social-link" data-type="feishu" onclick="SocialLinks.openFeishu()" title="飞书">🐦</button>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>导航</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="index.html#articles">文章列表</a></li>
+          <li><a href="tags.html">标签分类</a></li>
+          <li><a href="about.html">关于我</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>分类</h4>
+        <ul>
+          <li><a href="tags.html?tag=技术">技术笔记</a></li>
+          <li><a href="tags.html?tag=设计">设计思考</a></li>
+          <li><a href="tags.html?tag=读书">读书笔记</a></li>
+          <li><a href="tags.html?tag=随笔">生活随笔</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>联系</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openEmail()">✉ 邮箱</a></li>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openQR('wechat')">💬 微信</a></li>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openQQ()">🐧 QQ</a></li>
+          <li><a href="javascript:void(0)" onclick="SocialLinks.openFeishu()">🐦 飞书</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 ZMF · 思绪与光影 · 用心记录每一刻</span>
+      <span>Made with ❤ & code</span>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" title="回到顶部">↑</button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.5/dist/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/articles.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/article.js"></script>
+
+  <script>
+    // Switch code highlight theme based on current theme
+    function updateHljsTheme() {
+      const theme = document.documentElement.getAttribute('data-theme');
+      const light = document.getElementById('hljs-light');
+      const dark = document.getElementById('hljs-dark');
+      if (theme === 'dark') {
+        if (light) light.disabled = true;
+        if (dark) dark.disabled = false;
+      } else {
+        if (light) light.disabled = false;
+        if (dark) dark.disabled = true;
+      }
+    }
+
+    // Update on load and on theme change
+    document.addEventListener('DOMContentLoaded', () => {
+      updateHljsTheme();
+      const observer = new MutationObserver(() => updateHljsTheme());
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    });
+  </script>
+</body>
+</html>
